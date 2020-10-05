@@ -1,0 +1,135 @@
+body {
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+}
+
+h1 {
+  font-size: 6rem;
+  color: #1a1c20;
+  font-family: "Arvo", cursive;
+  text-shadow: -2px -2px 0px #8400ff, 2px 2px 0px #d54062;
+    background: rgba(20, 0, 0, 0.6);
+}
+
+footer {
+  color: #1a1c20;
+  font-family: sans-serif;
+}
+
+.A {
+background-color: #f56a79;
+}
+.B {
+background-color: #a37eba;
+}
+.C {
+  background-color: #f08a5d;
+
+}
+.D {
+background-color: #f09ae9;
+}
+.E {
+background-color: #a6f6f1;
+}
+.F {
+background-color: #f08a5d;
+}
+.G {
+background-color: #86c4ba;
+}
+.H {
+    background-color: #ffd36b;
+
+}
+.I {
+background-color: #91d18b;
+}
+.J {
+background-color: #86c4ba;
+}
+.K {
+background-color: #91d18b;
+}
+.L {
+background-color: #a6f6f1;
+}
+.M {
+  background-color: #ffd36b;
+}
+.N {
+background-color: #f09ae9;
+}
+.O {
+  background-color: #f56a79;
+
+}
+.P {
+background-color: #f08a5d;
+}
+.Q {
+  background-color: #ffd36b;
+
+}
+.R {
+background-color: #a37eba;
+}
+.S {
+background-color: #d3c09a;
+}
+.T {
+background-color: #86c4ba;
+}
+.U {
+background-color: #f56a79;
+}
+.V {
+background-color: #f08a5d;
+}
+.W {
+background-color: #a37eba;
+}
+.X {
+background-color: #91d18b;
+}
+.Y {
+background-color: #f09ae9;
+}
+.Z {
+background-color: #a6f6f1;
+}
+
+.set {
+  margin: 2% auto;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #d54062;;
+  opacity: 0.8;
+}
+
+.red {
+  color: red;
+}
+
+.alpha {
+  outline: focus;
+  border: 10px solid #212121;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: BLACK;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  text-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #d54062;
+}
