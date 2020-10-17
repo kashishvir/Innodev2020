@@ -40,12 +40,12 @@ def handleSignup(request):
             return redirect('home')
 
         myuser = User.objects.create_user(username, email, pass1)
-        myuser.is_active = False
+
 
         myuser.save()
 
 
-        email_subject= 'activate your account'
+        email_subject= 'ERUDITION TEAM'
         email_body = 'your account has been registered to erudition'
         send_mail(
                 email_subject,
@@ -66,9 +66,11 @@ def handleLogin(request):
         loginusername = request.POST['loginusername']
         loginpassword = request.POST['loginpassword']
         user = authenticate(username = loginusername, password = loginpassword)
-        c = Detail.objects.get(username = loginusername)
+
 
         if user is not None:
+            #c = Detail.objects.get(username = loginusername)
+            c=''
             login(request, user)
             messages.success(request, ' successfully logged in')
             return render(request,'student/homepage.html',{'c':c})
