@@ -16,15 +16,17 @@ def home(request):
     return render(request, 'home/home.html')
     #return HttpResponse("this is shit")
 
-@csrf_exempt
+
 def handleSignup(request):
     if request.method == "POST":
         username = request.POST['username']
         grade = request.POST['grade']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
         email = request.POST['email']
         pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
-        detail = Detail(username=username,grade=grade)
+        detail = Detail(username=username,grade=grade, fname = fname, lname = lname)
         detail.save()
 
         if not username.isalnum():
@@ -37,7 +39,7 @@ def handleSignup(request):
             messages.error(request, "password do not match")
             return redirect('home')
 
-        myuser = User.objects.create_user(username , email , pass1)
+        myuser = User.objects.create_user(username, email, pass1)
         myuser.is_active = False
 
         myuser.save()
@@ -64,13 +66,14 @@ def handleLogin(request):
         loginusername = request.POST['loginusername']
         loginpassword = request.POST['loginpassword']
         user = authenticate(username = loginusername, password = loginpassword)
+        c = Detail.objects.get(username = loginusername)
 
         if user is not None:
-            login(request,user)
+            login(request, user)
             messages.success(request, ' successfully logged in')
-            return redirect('home')
+            return render(request,'student/homepage.html',{'c':c})
         else:
-            messages.error(request,'Invalid credentials : PLEASE TRY AGAIN')
+            messages.error(request, 'Invalid credentials : PLEASE TRY AGAIN')
             return redirect('home')
     else:
         return HttpResponse("404-error found")

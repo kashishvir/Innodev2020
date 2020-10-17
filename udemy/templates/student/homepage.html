@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Parallax Scrolling</title>
+	<title>home</title>
 
 
   <style> h1{
@@ -219,6 +219,14 @@ ul.CTAs a {
 
 </head>
 <body>
+{% for message in messages%}
+  <div  class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>Message:</strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
 	<div class="wrapper">
 			<!-- Sidebar  -->
 			<nav id="sidebar">
@@ -229,25 +237,26 @@ ul.CTAs a {
 					<ul class="list-unstyled components">
 							<p>Menu</p>
 							<li class="nav-item active">
-									<a href="homepage.html">Home</a>
+									<a href="http://127.0.0.1:8000/student/ ">Home</a>
 							</li>
 							<li>
+
 									<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Grade</a>
 									<ul class="collapse list-unstyled" id="pageSubmenu">
 											<li>
-												<a href="grade1.html">Grade 1</a>
+												<a href="http://127.0.0.1:8000/student/grade1.html">Grade 1</a>
 											</li>
 											<li>
-													<a href="grade2.html">Grade 2</a>
+													<a href="{% url 'grade2'%}">Grade 2</a>
 											</li>
 											<li>
-													<a href="grade3.html">Grade 3</a>
+													<a href="{% url 'grade3'%}">Grade 3</a>
 											</li>
 											<li>
-													<a href="grade4.html">Grade 4</a>
+													<a href="{% url 'grade4'%}">Grade 4</a>
 											</li>
 											<li>
-													<a href="grade5.html">Grade 5</a>
+													<a href="{% url 'grade5'%}">Grade 5</a>
 											</li>
 									</ul>
 							</li>
@@ -288,17 +297,18 @@ ul.CTAs a {
 															<a class="nav-link" href="#">My Profile</a>
 													</li>
 													<li class="nav-item">
-															<a class="nav-link" href="signup.html">Log Out</a>
+															<a class="nav-link" id="logut" href="http://127.0.0.1:8000/logout">Log Out</a>
 													</li>
 											</ul>
 									</div>
 							</div>
 					</nav>
 <!--body-->
-<div class="box">
-	<h2><img src="https://www.kindpng.com/picc/m/105-1055656_account-user-profile-avatar-avatar-user-profile-icon.png" alt="kashish">   STUDENT</h2>
-	<p>GRADE</p>
-	<p>Email</p>
+<div class="box" >
+
+	<h2><img src="{{c.image.url}}" >   STUDENT:{{request.user}}</h2>
+	<p>Grad:{{c.grade}}</p>
+	<p>Name:{{c.fname}}</p>
 	<br>
 </div>
 <br>

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'student.apps.StudentConfig',
 ]
 
 MIDDLEWARE = [
@@ -116,11 +117,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+APPEND_SLASH=False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR,'static')
+]
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MESSAGE_TAGS = {
@@ -134,3 +141,6 @@ EMAIL_USE_TLS = True
 #DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD = '9893094041'
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'static/images')
+MEDIA_URL = '/images/'
